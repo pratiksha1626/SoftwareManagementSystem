@@ -1,0 +1,41 @@
+<!-- <p>update-software works!</p> -->
+
+<div class="col-md-6 offset-md-3">
+    <h3> Update Software </h3>
+    <form (ngSubmit) = "onSubmit()">
+    
+        <div class="form-group">
+            <label> developer</label>
+            <input type="text" class ="form-control" id = "developer"
+                [(ngModel)] = "software.developer" name = "developer">
+        </div>
+    
+        <div class="form-group">
+            <label> price</label>
+            <input type="text" class ="form-control" id = "price"
+                [(ngModel)] = "software.price" name = "price">
+        </div>
+    
+        <div class="form-group">
+            <label> softwareName</label>
+            <input type="text" class ="form-control" id = "softwareName"
+                [(ngModel)] = "software.softwareName" name = "softwareName">
+        </div>
+
+        <div class="form-group">
+            <label> rating</label>
+            <input type="text" class ="form-control" id = "rating"
+                [(ngModel)] = "software.rating" name = "rating">
+        </div>
+
+        <div class="form-group">
+            <label> isDesktopApplication</label>
+            <input type="text" class ="form-control" id = "isDesktopApplication"
+                [(ngModel)] = "software.isDesktopApplication" name = "isDesktopApplication">
+        </div>
+    
+    
+        <button class = "btn btn-success" type ="submit">Submit</button>
+    
+    </form>
+    </div> 

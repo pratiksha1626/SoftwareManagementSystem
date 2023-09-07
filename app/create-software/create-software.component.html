@@ -1,0 +1,51 @@
+<!-- <p>create-software works!</p> -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="create-software.component.css">
+</head>
+<body>
+
+<div class="col-md-6 offset-md-3">
+    <h3> Create Software </h3>
+    <form (ngSubmit) = "onSubmit()">
+    
+        <div class="form-group">
+            <label> Developer</label>
+            <input type="text" class ="form-control" id = "developer"
+                [(ngModel)] = "software.developer" name = "developer">
+        </div>
+    
+        <div class="form-group">
+            <label> Price</label>
+            <input type="text" class ="form-control" id = "price"
+                [(ngModel)] = "software.price" name = "price">
+        </div>
+    
+        <div class="form-group">
+            <label> Software Name</label>
+            <input type="text" class ="form-control" id = "softwareName"
+                [(ngModel)] = "software.softwareName" name = "softwareName">
+        </div>
+
+        <div class="form-group">
+            <label> Rating</label>
+            <input type="text" class ="form-control" id = "rating"
+                [(ngModel)] = "software.rating" name = "rating">
+        </div>
+
+        <div class="form-group">
+            <label> IsDesktopApplication</label>
+            <input type="text" class ="form-control" id = "isDesktopApplication"
+                [(ngModel)] = "software.isDesktopApplication" name = "isDesktopApplication">
+        </div>
+    
+        <button class = "btn btn-success" type ="submit">Submit</button>
+    
+    </form>
+    </div> 
+</body>
+</html>
+

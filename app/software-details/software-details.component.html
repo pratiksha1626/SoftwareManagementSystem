@@ -1,0 +1,19 @@
+
+<div class="backntn">
+    <a href="home" class="alert('BACK TO HOME')"><img src="/assets/newback.png"></a> </div>
+<div class="software-details">
+    <div class='line'>
+        <h2 class='lineUp'>View Your Details</h2>
+      </div>
+    <div class="software-name">{{software.softwareName}}</div>
+    <hr>
+    <div class="developer">Developer: {{software.developer}}</div>
+    <hr>
+    <div class="price">Price: {{software.price}}</div>
+    <hr>
+    <div class="rating">Rating: {{software.rating}}</div>
+    <hr>
+    <div class="desktop-app">Desktop Application: {{software.isDesktopApplication}}</div>
+</div>
+
+<button type="button"(click) = "addBooking(softwareId)"class="btn"style="color:black;background-color: #99bbff;height:50px;width:100px;font-size:17px;font-weight:bold">Buy Now!</button>

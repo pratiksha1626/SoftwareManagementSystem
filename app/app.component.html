@@ -1,0 +1,139 @@
+
+<link rel="stylesheet" href="app.component.css"> 
+<header>
+  <div class="container clearfix">
+     <h1 class="logo"><img src="assets/logo1.PNG"></h1>
+    <nav class="main-nav">
+      <ul>
+        <li class="nav-item">
+          <a routerLink="home" routerLinkActive="active"  class="nav-link" >Home</a>
+        </li>
+        <li>
+         <!-- <a *ngIf="loginService.isUserLoggedIn()" routerLink="software-list" routerLinkActive="active" class="nav-link" >Software List</a> -->
+        </li>
+        <li class = "nav-item">
+          <!-- <a  *ngIf="loginService.isUserLoggedIn()" routerLink="create-software" routerLinkActive="active" class="nav-link" >Add Software</a>  -->
+          <li class = "nav-item">
+            <a routerLink="aboutus" routerLinkActive="/aboutus" class="nav-link" >About Us</a></li>
+            <li class = "nav-item">  
+              <a routerLink="contact" routerLinkActive="/contact" class="nav-link" >Contact us</a></li>
+              <li class="nav-item dropdown">
+                <a  *ngIf="loginService.isUserLoggedIn()" class="nav-link dropdown-toggle"  href="active" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Software-Services
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="create-software">Add Software</a></li>
+                  <li><a class="dropdown-item" href="software-list">Software List</a></li>
+                </ul>
+              </li>
+              <li class = "nav-item">
+                <a  routerLink="feedback" routerLinkActive="feedback" class="nav-link" >Feedback</a>
+                <li class = "nav-item">
+            <li>
+              <a *ngIf="!loginService.isUserLoggedIn()" routerLink="/login" class="nav-link">Login</a></li>
+              
+              <li>
+              <a *ngIf="loginService.isUserLoggedIn()" routerLink="/logout" class="nav-link">LogOut</a>
+            </li>
+              
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="backntn">
+<!-- <a href="home" class="alert('BACK TO HOME')"><img src="/assets/newback.png"></a> </div> -->
+ <div><a href="home" class="previous" style="color: Black;" >&laquo;  </a></div> 
+ <div class="back-button">
+  <a href="home" class="label"> <- Back to Home</a>
+  </div>
+
+ 
+<!-- <img src="assets/logo1.png" alt="Logo"> -->
+  
+  <h1 class="text-center"></h1>
+  <div class = "container">
+    <router-outlet></router-outlet>
+  </div>
+
+ 
+    
+    <!-- Footer -->
+    <footer class="text-center text-white" style="background-color: #faf8f8;">
+      <!-- Grid container -->
+      <div class="container pt-4">
+        <!-- Section: Social media -->
+        <section class="mb-4">
+          <!-- Facebook -->
+          <a
+            class="btn btn-link btn-floating btn-lg text-dark m-1"
+            href="https://www.facebook.com/softwarecompanydxb/"
+            role="button"
+            data-mdb-ripple-color="dark"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+    
+          <!-- Twitter -->
+          <a
+            class="btn btn-link btn-floating btn-lg text-dark m-1"
+            href="https://twitter.com/"
+            role="button"
+            data-mdb-ripple-color="dark"
+            ><i class="fab fa-twitter"></i
+          ></a>
+    
+          <!-- Google -->
+          <a
+            class="btn btn-link btn-floating btn-lg text-dark m-1"
+            href="https://www.google.com/"
+            role="button"
+            data-mdb-ripple-color="dark"
+            ><i class="fab fa-google"></i
+          ></a>
+    
+          <!-- Instagram -->
+          <a
+            class="btn btn-link btn-floating btn-lg text-dark m-1"
+            href="https://www.instagram.com/sakshi_chinchwade/"
+            role="button"
+            data-mdb-ripple-color="dark"
+            ><i class="fa-brands fa-instagram"></i>
+          </a> 
+    
+          <!-- Linkedin -->
+          <a
+            class="btn btn-link btn-floating btn-lg text-dark m-1"
+            href="https://www.linkedin.com/in/pratikshachinchwade/"
+            role="button"
+            data-mdb-ripple-color="dark"
+            ><i class="fab fa-linkedin"></i
+          ></a>
+          <!-- Github -->
+          <a
+            class="btn btn-link btn-floating btn-lg text-dark m-1"
+            href="https://github.com/pratikshachinchwade/"
+            role="button"
+            data-mdb-ripple-color="dark"
+            ><i class="fab fa-github"></i
+          ></a>
+        </section>
+        <!-- Section: Social media -->
+      </div>
+      <!-- Grid container -->
+    
+      <!-- Copyright -->
+      <div class="text-center text-dark p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        <nav>
+          <a href="/home">Home</a><br>
+          <a href="/about">About</a><br>
+          <a href="/contact">Contact</a><br>
+          <a href="/address">Address</a><br>
+
+          <a href="sakshichinchwade2002@gmail.com">sakshichinchwade2002@gmail.com</a>
+        </nav>
+        © 2023 Copyright:
+        <a class="text-dark" href="https://mdbootstrap.com/">SoftwareManagement.com</a>
+      </div>
+      <!-- Copyright -->
+      
+    </footer>

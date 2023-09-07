@@ -1,0 +1,93 @@
+<link rel="stylesheet" href="software-list.component.css">
+<div class="dropdown" style="margin-left: 80%;margin-top: 2%;">
+  <button class="dropdown-btn" aria-haspopup="menu">
+    <span> Sort BY </span>
+    <span class="arrow"></span>
+  </button>
+  <ul class="dropdown-content" role="menu">
+    <li style="--delay: 1;"><a  (click)="sortBy('costHigh')"  class="dropdown-item"><b>Cost High to Low</b></a></li>
+    <li style="--delay: 2;"><a (click)="sortBy('costLow')" class="dropdown-item"><b>Cost Low to High</b></a></li>
+    <li style="--delay: 3;"><a (click)="sortBy('ratingLow')" class="dropdown-item"><b>Rating Low to High</b></a></li>
+    <li style="--delay: 4;"><a (click)="sortBy('ratingHigh')" class="dropdown-item"><b>Rating High to Low</b></a></li>
+  </ul>
+</div>
+
+
+
+  
+  
+   <div class="list row">
+    <div class="col-md-9">
+      <div class="input-group mb-8">
+        <div class="input-group-append mb-8">
+          <li class="nav-item dropdown" style="list-style: none;margin:2px"></li>
+          <input *ngIf="selectedSearchType==='developer' else name" type="text" class="form-control1"style="padding-left: 5px; border-color: black;border: solid;width: 300pt;
+          margin-left: -120pt;" placeholder="Search By Developer Name" [(ngModel)]="developer" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"/>
+          <ng-template #name >
+            <input type="text" class="form-control1"style="padding-left: 5px; border-color: black;border: solid; width: 300pt;
+            margin-left: -120pt;"placeholder="Search By Software Name"  [(ngModel)]="softwareName" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"/>
+          </ng-template>       
+         <ul class="dropdown-menu"  style="background-color: rgba(8, 8, 8, 0.5); padding: 10px; border: #110911;">
+          <li><a id="01" class="dropdown-item" (click)="selectedSearchType ='name'"><b>Software Name</b></a></li>
+          <li><a id="01" class="dropdown-item" (click)="selectedSearchType ='developer'"><b>Developer Name</b></a></li>
+         </ul>
+          <div class="input-group-append">
+            <button class="twenty-one" type="button" (click)="search(selectedSearchType)">Search</button>
+                </div>
+          
+          <table>
+            <tr>
+              <th> <button class="btnweb" type="button" (click)="getIsDesktopApplication()" style="margin-left: 2pc;">
+                Desktop Applications
+                     </button>  </th>
+              <th> <button class="btnweb" type="button" (click)="getIsWebApplication()"
+                style="margin-left: 1pc;">Web Applications </button> </th>
+            </tr>
+          
+          </table>
+    
+       
+        </div>
+      </div>
+    </div>
+  </div>
+      
+
+    
+
+<table class = "table table-striped">
+    <thead>
+        <tr>
+            <th> Software Name</th>
+            <th> Developer</th>
+            <th> Price </th>
+            <th> Rating </th>
+            <th> DesktopApplication </th>
+            <th> Actions </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let softwareFor of softwares  | paginate: { itemsPerPage: count, currentPage: pageNo }" >
+          <td> {{ softwareFor.softwareName }} </td>
+            <td> {{ softwareFor.developer }} </td>
+            <td> {{ softwareFor.price }} </td>
+            <td> {{ softwareFor.rating }} </td>
+            <td> {{ softwareFor.isDesktopApplication }} </td>
+            <td>
+                <button (click) = "updateSoftwareDetailsById(softwareFor.softwareId)" class = "btn btn-info"> Update </button>
+                <button (click) = "deleteSoftwareById(softwareFor.softwareId)" class = "btn btn-danger" style="margin-left: 10px"> Delete </button>
+                <button (click) = "softwareDetails(softwareFor.softwareId)" class = "btn btn-info" style="margin-left: 10px"> View </button>
+                <button (click) = "getUsersBySoftwareId(softwareFor.softwareId)" class = "btn btn-info" style="margin-left: 10px"> Customer</button>
+
+              </td>
+            
+        </tr>
+
+        <td>
+            <button (click) = "removeAllSoftwares()" class = "btn btn-danger" style="margin-left: 10px"
+            class="alert('BACK TO HOME')"> Clear All Softwares </button>
+        </td>
+    </tbody>
+</table>
+
+<div> <pagination-controls (pageChange)="pageNo = $event"></pagination-controls> </div>
